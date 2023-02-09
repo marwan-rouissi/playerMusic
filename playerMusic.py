@@ -40,7 +40,7 @@ def play():
     music = playlist.get(tk.ANCHOR)
 
     # chemin d'accès du fichier à lire (le modifier si code exécuté ou testé sur une autre machine que la mienne)
-    music = f'c:/Users/rouis/OneDrive/Bureau/mp3/{music}'
+    music = f'musique/{music}'
 
     try:
         # charger le titre selectionné
@@ -74,7 +74,7 @@ def next():
     next_one = cur_one[0]+1
     # Sélectionner le morceau incrémenté
     music = playlist.get(next_one)
-    music = f'c:/Users/rouis/OneDrive/Bureau/mp3/{music}'
+    music = f'musique/{music}'
     
     # s'il y a un morceau qui suit le morceau actuel, excecute les tâches suivantes
     try:
@@ -104,7 +104,7 @@ def prev():
     prev_one = cur_one[0]-1
     # Sélectionner le morceau décrémenté
     music = playlist.get(prev_one)
-    music = f'c:/Users/rouis/OneDrive/Bureau/mp3/{music}'
+    music = f'musique/{music}'
     
     # s'il y a un morceau qui précéde, excecute les tâches suivantes 
     try:
@@ -173,7 +173,7 @@ def volume(x):
 def pos_lecture(x):
     #time_label.config(text=f'{int(lecture.get())} of {int(music_len)}')
     music = playlist.get(tk.ACTIVE)
-    music = f'c:/Users/rouis/OneDrive/Bureau/mp3/{music}'
+    music = f'musique/{music}'
     pygame.mixer.music.load(music)
     pygame.mixer.music.play(loops=0, start=int(lecture.get()))
 
@@ -189,7 +189,7 @@ def play_time():
     # Determiner le titre actuellement séléctionné
     music = playlist.get(ACTIVE)
 
-    music = f'c:/Users/rouis/OneDrive/Bureau/mp3/{music}'
+    music = f'musique/{music}'
     # Charger le morceau avec Mutagen
     music_mut = MP3(music)
     # Récupérer la durée totale du morceau
@@ -286,7 +286,7 @@ def random_play():
     r_index = music.index(rand_music)
 
     # chemin d'accès du fichier à lire (le modifier si code exécuté ou testé sur une autre machine que la mienne)
-    rand_music = f'c:/Users/rouis/OneDrive/Bureau/mp3/{rand_music}'
+    rand_music = f'musique/{rand_music}'
 
     # charger le titre random
     pygame.mixer.music.load(rand_music)
